@@ -13,3 +13,46 @@
     1-2) 입력값 평가 (a 에 1을 대입하는구나)
     1-3) 출력 ( 대입은 undefined)
     1-4) 반복 ( 입력 대기)
+
+## ES2015
+1. Promise
+<pre>
+<code>
+//콜백 헬... 
+User.findOne("user", (err, user)=>{
+    if(err){
+        return console.error(err);
+    }
+console.log(user);
+    User.update("user",(err, updateUser) => {
+        
+    });
+});
+
+User.findOne("user")
+.then(user)
+.catch(e){
+    console.error(e);
+}
+// 프로미스 만들어 보기
+
+const plus = new Promise((res, reject) =>{
+    const a = 1;
+    const b = 2;
+    if( a + b > 3){
+        res(a+b);
+    }else{
+        reject(a+b);
+    }
+})
+
+plus
+.then(res => {
+    console.log(res)
+})
+.catch(error => {
+    console.error(error)
+})
+
+</code>
+</pre>
