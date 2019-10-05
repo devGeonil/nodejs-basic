@@ -15,22 +15,51 @@
     1-4) 반복 ( 입력 대기)
 
 ## 호출 스택과 이벤트 루프
-1. REPL 이란 무엇인가?<br/>
-    - Read, Evalute, Print, Loop<br/>
-    var a = 1;<br/>
-    1-1) 입력값을 읽기 (var a = 1)<br/>
-    1-2) 입력값 평가 (a 에 1을 대입하는구나)<br/>
-    1-3) 출력 ( 대입은 undefined)<br/>
-    1-4) 반복 ( 입력 대기)
+<pre>
+<code>
+자바스크립트 실행순서
+
+function first(){
+    second();
+    console.log(1);
+}
+function second(){
+    third();
+    console.log(2);
+}
+function third(){
+    console.log(3)
+}
+first() 실행 - // 3, 2, 1
+
+
+-------------------                               태스크 큐 (FIFO))       
+|                  |                     3s.    ex) 이벤트 루프가 3s 체크   
+|                  |          setTimeout(x)     |================
+| console.log(3)   | ===== [ 이벤트 루프 ]======|  run[3s]
+| 실행 : third (x) |                            |================
+| 실행 : second(x) |
+| 실행 : first (x) |
+-------------------
+LIFO (호출 스택 / 콜스택 - 함수가 실행되는 순간에 쌓기이 시작)
+
+
+
+
+
+
+
+
+
+
+
+
+</code>
+</pre>
+
 
 ## 이벤트기반, 싱글쓰레드, 논블러킹IO
-1. REPL 이란 무엇인가?
-    - Read, Evalute, Print, Loop
-    var a = 1;
-    1-1) 입력값을 읽기 (var a = 1)
-    1-2) 입력값 평가 (a 에 1을 대입하는구나)
-    1-3) 출력 ( 대입은 undefined)
-    1-4) 반복 ( 입력 대기)
+
 
 ## ES2015
 1. Promise (결과를 가지고 있지만 밖에 표현을 안해주는 것. 원하는 위치에서 결과를 뺄 수 있다.)
