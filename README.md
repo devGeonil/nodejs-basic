@@ -7,20 +7,20 @@
 
 ## REPL
 1. REPL 이란 무엇인가?
-    - Read, Evalute, Print, Loop
-    var a = 1;
-    1-1) 입력값을 읽기 (var a = 1)
-    1-2) 입력값 평가 (a 에 1을 대입하는구나)
-    1-3) 출력 ( 대입은 undefined)
+    - Read, Evalute, Print, Loop<br/>
+    var a = 1;<br/>
+    1-1) 입력값을 읽기 (var a = 1)<br/>
+    1-2) 입력값 평가 (a 에 1을 대입하는구나)<br/>
+    1-3) 출력 ( 대입은 undefined)<br/>
     1-4) 반복 ( 입력 대기)
 
 ## 호출 스택과 이벤트 루프
-1. REPL 이란 무엇인가?
-    - Read, Evalute, Print, Loop
-    var a = 1;
-    1-1) 입력값을 읽기 (var a = 1)
-    1-2) 입력값 평가 (a 에 1을 대입하는구나)
-    1-3) 출력 ( 대입은 undefined)
+1. REPL 이란 무엇인가?<br/>
+    - Read, Evalute, Print, Loop<br/>
+    var a = 1;<br/>
+    1-1) 입력값을 읽기 (var a = 1)<br/>
+    1-2) 입력값 평가 (a 에 1을 대입하는구나)<br/>
+    1-3) 출력 ( 대입은 undefined)<br/>
     1-4) 반복 ( 입력 대기)
 
 ## 이벤트기반, 싱글쓰레드, 논블러킹IO
