@@ -75,4 +75,19 @@ plus
 
 </code>
 </pre>
-2. 
+2. async / await
+<pre>
+<code>
+async () => {
+    try{
+        const user = await User.findOne("user");
+        const updateUser = await User.update(user);
+        const removeUser = await User.remove(user);
+        console.log("done");
+    }catch(e){
+        console.log(e)
+    }
+    
+}
+</code>
+</pre>
