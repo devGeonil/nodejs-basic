@@ -14,8 +14,27 @@
     1-3) 출력 ( 대입은 undefined)
     1-4) 반복 ( 입력 대기)
 
+## 호출 스택과 이벤트 루프
+1. REPL 이란 무엇인가?
+    - Read, Evalute, Print, Loop
+    var a = 1;
+    1-1) 입력값을 읽기 (var a = 1)
+    1-2) 입력값 평가 (a 에 1을 대입하는구나)
+    1-3) 출력 ( 대입은 undefined)
+    1-4) 반복 ( 입력 대기)
+
+## 이벤트기반, 싱글쓰레드, 논블러킹IO
+1. REPL 이란 무엇인가?
+    - Read, Evalute, Print, Loop
+    var a = 1;
+    1-1) 입력값을 읽기 (var a = 1)
+    1-2) 입력값 평가 (a 에 1을 대입하는구나)
+    1-3) 출력 ( 대입은 undefined)
+    1-4) 반복 ( 입력 대기)
+
 ## ES2015
-1. Promise
+1. Promise (결과를 가지고 있지만 밖에 표현을 안해주는 것. 원하는 위치에서 결과를 뺄 수 있다.)
+    - Promise.all([p1,p2,p3])
 <pre>
 <code>
 //콜백 헬... 
@@ -56,3 +75,4 @@ plus
 
 </code>
 </pre>
+2. 
