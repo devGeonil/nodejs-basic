@@ -37,28 +37,25 @@ first() 실행 - // 3, 2, 1
 |                  |                     3s.    ex) 이벤트 루프가 3s 체크   
 |                  |          setTimeout(x)     |================
 | console.log(3)   | ===== [ 이벤트 루프 ]======|  run[3s]
-| 실행 : third (x) |                            |================
-| 실행 : second(x) |
-| 실행 : first (x) |
--------------------
+| 실행 : third (x) |           순서 체크         |================
+| 실행 : second(x) |                            |================          
+| 실행 : first (x) |                            |================  
+-------------------                             |================
 LIFO (호출 스택 / 콜스택 - 함수가 실행되는 순간에 쌓기이 시작)
 
-
-
-
-
-
-
-
-
-
-
-
+태스크 큐 (FIFO)) 
+setTimeout
+setInterval
+setImmediate
+Promise
+async / await
 </code>
 </pre>
 
 
-## 이벤트기반, 싱글쓰레드, 논블러킹IO
+## 이벤트기반, 싱글쓰레드, 논블러킹IO(파일 / 네트워크))
+1. 이벤트 리스너를 통한 이벤트 등록 = 태스크 큐에 쌓는다.
+2. 태스크 큐로 보내버리는 것 (논블러킹)
 
 
 ## ES2015
@@ -118,5 +115,126 @@ async () => {
     }
     
 }
+</code>
+</pre>
+
+## 노드기능
+1. 노드 모듈 시스템
+<pre>
+<code>
+exports.odd = "홀수 입니다.";
+exports.even = "짝수 입니다.";
+
+/*
+const odd = "홀수 입니다.";
+const even = "짝수 입니다.";
+
+    module.exports = {
+        odd,
+        even
+    }
+
+*/
+
+const {odd , even} = require("./var");
+
+console.log("index.js 입니다 \n\n");
+console.log(odd, even)
+
+</code>
+</pre>
+
+2. global 객체
+<pre>
+<code>
+    노드의 전역객체 global / 브라우저의 window 개념
+    globala.js
+        module.exports = () => global.message
+    globalb.js
+        const a = require('./globala');
+        global.message = "Hello It's globala
+        console.log(a());
+</code>
+</pre>
+
+3. console 객체
+<pre>
+<code>
+    console.time("check");
+    console.timeEnd("check");
+    console.log("");
+    console.error("");
+    console.dir({color:false, text:none}). {옵션};
+</code>
+</pre>
+
+4. 타이머 객체
+<pre>
+<code>
+    setTimeout = clearTimeout
+    setInterval = clearInterval
+    setImmediate
+</code>
+</pre>
+
+4. __filename, __dirname, process
+<pre>
+<code>
+    console.log(__dirname);
+    console.log(__filename);
+    process windwo 프로그램을 만들때 사용.
+</code>
+</pre>
+
+4. os 모듈
+<pre>
+<code>
+    os.homedir()
+    os.totalmem()
+    os.cpus()
+</code>
+</pre>
+
+5. path 모듈
+<pre>
+<code>
+    const path = require('path');
+    path.sep(폴더 구분자)
+    path.delimiter(세미콜론 / 환경변수 구분자)
+    path.dirname(__filename); 디렉토리
+    path.extname(__filename); 확장자
+    path.basename(__filename); 파일명
+    path.parse(__filename); 파일 관련 객체를 리턴.
+    path.normalize();
+    path.isAbsolute("C:\\") 절대경로 : true / 상대경로 : false
+    ***
+    path.join() 절대 결로 무시하고 합침 - 현재 위치서 부터
+    path.resolve() 절대 경로 고려하고 합침  /user => c/user 가 됨
+</code>
+                      
+5. url 모듈
+<pre>
+<code>
+    const url = new URL("http://www.naver.com/user/1?query=geonil")
+    console.dir(url)
+</code>
+</pre>
+
+
+### 버버와 스트림
+<pre>
+<code>
+    DATA -----> |  버퍼 | 버퍼 | 버퍼 | |
+    버퍼를 꽉! 채우고 전송 
+    버퍼를 꽉! 채우고 전송 
+    버퍼를 꽉! 채우고 전송 
+    버퍼를 꽉! 채우고 전송 STREAM
+</code>
+</pre>
+
+### 이벤트
+<pre>
+<code>
+    
 </code>
 </pre>
